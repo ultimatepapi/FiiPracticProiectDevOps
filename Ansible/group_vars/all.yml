@@ -1,0 +1,22 @@
+# Path to the root CA certificate
+root_ca_local_path: "~/ca.crt"
+root_ca_remote_path: "/etc/pki/ca-trust/source/anchors/ca.crt"
+
+# Timezone to set on all hosts
+timezone: Europe/Bucharest
+
+# List of Docker packages to install
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin
+
+# Docker repository configuration
+docker_repo_name: docker-ce-stable
+docker_repo_description: Docker CE Stable
+docker_repo_baseurl: https://download.docker.com/linux/centos/$releasever/$basearch/stable
+docker_repo_gpgcheck: yes
+docker_repo_gpgkey: https://download.docker.com/linux/centos/gpg
+docker_repo_enabled: yes
+
