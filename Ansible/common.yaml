@@ -46,17 +46,17 @@
 
     - name: Set SSH banner file
       copy:
-        dest: /etc/issue.net
+        dest: /etc/ssh/ssh_banner
         content: "{{ banner }}"
         owner: root
         group: root
         mode: '0644'
 
-    - name: Enable SSH banner
+    - name: SSH banner
       lineinfile:
         path: /etc/ssh/sshd_config
         regexp: '^Banner'
-        line: 'Banner /etc/issue.net'
+        line: 'Banner /etc/ssh/ssh_banner'
       notify:
         - restart sshd
 
